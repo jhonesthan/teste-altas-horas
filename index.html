@@ -1,0 +1,70 @@
+<!--Aula 25.1 HTML E CSS PARTE 1
+    Aula 25.2 HTML E CSS PARTE 2
+    Aula 25.3 HTML E CSS PARTE 3 
+
+    Aula 26 Javascript no Html -->
+
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            div{
+                text-align: center;
+    
+            }
+            div button {
+                width: 25px;
+                height: 25px;
+                border: 1px solid black;
+                background-color: rgb(10, 189, 96);
+                
+            }
+            div button:hover {
+                cursor: pointer;
+                background-color: chartreuse;
+                transition: 0.3s;
+            }
+            div p {font-size: 40px;}
+        </style>
+        
+        <div>
+            <h1>Carrinho de compras Altas horas</h1>
+            <button id="increment" onclick="increment()" > + </button>
+            <button id="decrement" onclick="decrement()" > - </button>
+            <p id="number-increment">0</p>
+            <p id="para"></p>
+        </div>
+        <script>
+    
+            const numberIncrement = document.querySelector('#number-increment');
+            const para = document.querySelector('#para');
+            const imagem = document.querySelector('#imagem');
+    
+            const increment = () => {
+                const num = parseInt(numberIncrement.textContent);
+                numberIncrement.textContent = num + 1;
+    
+                if(num >= 0) {
+                    para.innerHTML = "";
+                }
+                if (num >= 5) {
+                    para.innerHTML = "Limite de quantidade por produtos atingida";
+                }
+            }
+            const decrement = () => {
+                const num = parseInt(numberIncrement.textContent);
+                numberIncrement.textContent = num - 1;
+    
+                if(num == 0) {
+                    para.innerHTML = " Opção Inválida";
+                }
+            }
+        </script>
+    </body>
+    </html>
